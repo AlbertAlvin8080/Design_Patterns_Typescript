@@ -1,17 +1,17 @@
 import { log } from 'console';
-import { ConfidentialInfoFactory, ConfidentialInfoFactorySync, PublicInfoFactory, PublicInfoFactorySync } from './instances';
+import { ConfidentialInfoProviderFactory, ConfidentialInfoProviderFactorySync, PublicInfoProviderFactory, PublicInfoProviderFactorySync } from './factoryInstances';
 
 async function mainAsync(pwd: string) {
   try 
   {
-    const publicInfo = new PublicInfoFactory();
-    const confidentialInfo = new ConfidentialInfoFactory();
+    const publicInfo = new PublicInfoProviderFactory();
+    const confidentialInfo = new ConfidentialInfoProviderFactory();
 
     if(pwd === "designpatterns") {
-      log(await confidentialInfo.getInfo());
+      log(await confidentialInfo.getInfoProvider().getInfo());
     }
     else {
-      log(await publicInfo.getInfo());
+      log(await publicInfo.getInfoProvider().getInfo());
     }
     
   } catch (err) {
@@ -20,18 +20,18 @@ async function mainAsync(pwd: string) {
 }
 
 function mainSync(pwd: string): void {
-  const publicInfo = new PublicInfoFactorySync();
-  const confInfo = new ConfidentialInfoFactorySync();
+  const publicInfo = new PublicInfoProviderFactorySync();
+  const confInfo = new ConfidentialInfoProviderFactorySync();
 
   if(pwd === "designpatterns") {
-    log(publicInfo.getInfo());
+    log(publicInfo.getInfoProvider().getInfo());
   }
   else {
-    log(confInfo.getInfo());
+    log(confInfo.getInfoProvider().getInfo());
   }
 }
 
 const pwd = "designpatterns";
 log();
-// mainAsync(pwd);
+mainAsync(pwd);
 mainSync(pwd);
