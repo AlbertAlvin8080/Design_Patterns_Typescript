@@ -11,3 +11,7 @@ export function readFileUtil(filePath: string): Promise<string> {
     });
   });
 }
+
+// function example(filePath: string): string {
+//   return fs.readFileSync("file/public.txt", "utf8").toString();
+// }
