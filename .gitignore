@@ -59,6 +59,9 @@ JSF/*/out/
 **/*.exe
 
 **/node_modules/
+# **/tsconfig.json
+**/package-lock.json
+**/package.json
 
 -- TESTING --
 **/*.madmoiselle

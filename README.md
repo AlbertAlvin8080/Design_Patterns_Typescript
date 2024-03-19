@@ -7,5 +7,8 @@ Simple repository created with the purpose of learning more about design pattern
 npm install -g ts-node typescript
 ```
 ```bash
-ts-node ./path/to/a/.main.ts
+npm install @types/node
+```
+```bash
+ts-node path/to/a/.main.ts
 ```
