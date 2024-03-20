@@ -10,5 +10,9 @@ npm install -g ts-node typescript
 npm install @types/node
 ```
 ```bash
+tsc --init
+```
+```bash
 ts-node path/to/a/.main.ts
 ```
+
