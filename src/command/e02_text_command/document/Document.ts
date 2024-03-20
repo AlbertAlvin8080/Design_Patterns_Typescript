@@ -10,4 +10,8 @@ export class Document {
         this._text = this._text.filter((line, lineIdx) => lineIdx !== idx);
         return line;
     }
+
+    length() {
+        return this._text.length;
+    }
 }

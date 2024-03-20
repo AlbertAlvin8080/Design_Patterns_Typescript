@@ -8,4 +8,9 @@ export class InsertTextCommand implements Command {
     public execute(text: string): void {
         this.document.addLine(text);
     }
+
+    undo(): void {
+        this.document.removeLine(this.document.length() - 1);
+    }
+
 }

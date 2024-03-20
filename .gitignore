@@ -59,7 +59,7 @@ JSF/*/out/
 **/*.exe
 
 **/node_modules/
-# **/tsconfig.json
+**/tsconfig.json
 **/package-lock.json
 **/package.json
 

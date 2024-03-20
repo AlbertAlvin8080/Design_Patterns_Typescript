@@ -1,17 +1,24 @@
 export class Document {
-    constructor(private _text: string[] = []) { }
+    constructor(
+        private _content: string[] = [], 
+        private _path: string
+    ) { }
 
-    public addLine(text: string): void {
-        this._text.push(text);
+    public getPath() {
+        return this._path;
+    }
+
+    public addLine(content: string): void {
+        this._content.push(content);
     }
 
     public removeLine(idx: number): string {
-        const line = this._text[idx];
-        this._text = this._text.filter((line, lineIdx) => lineIdx !== idx);
+        const line = this._content[idx];
+        this._content = this._content.filter((line, lineIdx) => lineIdx !== idx);
         return line;
     }
 
     public getLines(): string {
-        return this._text.reduce((acc, str) => acc + str + "\n", "");
+        return this._content.reduce((acc, str) => acc + str + "\n", "");
     }
 }
